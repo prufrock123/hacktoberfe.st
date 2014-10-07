@@ -1,0 +1,440 @@
+/* latin */
+ @font-face {
+    font-family:'UnifrakturMaguntia';
+    font-style: normal;
+    font-weight: 400;
+    src: local('UnifrakturMaguntia'), url(http://fonts.gstatic.com/s/unifrakturmaguntia/v7/7KWy3ymCVR_xfAvvcIXm30098FnRF1CugLr3c43yiPT3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+ @font-face {
+    font-family:'Vollkorn';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(http://fonts.gstatic.com/s/vollkorn/v6/idGKtgpe38okB6bfeHMsLBkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/**
+ * general
+ */
+ body {
+    -webkit-transition: opacity .5s ease;
+            transition: opacity .5s ease;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+p {
+    margin-bottom: .75em;
+}
+p + p {
+    text-indent: 0;
+    margin-bottom: .75em;
+    margin-top: 0;
+}
+/**
+ * grids
+ */
+ .grid {
+    text-align: justify;
+    font-size: 0;
+}
+.grid::after {
+    content:'';
+    display: inline-block;
+    width: 100%;
+}
+.grid > * {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-size: medium;
+    font-size: 1rem;
+    text-align: left;
+}
+@media screen and (min-width: 800px) {
+    .grid-2-800 > * {
+        width: 49%;
+    }
+}
+/**
+ * top-section
+ */
+ .above-the-fold {
+    min-height: 800px;
+    background-image: url(../img/2.jpg);
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+/**
+ * banner
+ */
+.banner {
+    display: inline-block;
+    color: red;
+    position: relative;
+    z-index: 2;
+    margin: 3em 0 8em;
+}
+.banner::before, .banner::after {
+    content:"";
+    background-color: currentColor;
+    display: inline-block;
+    position: absolute;
+    width: 1em;
+    height: 100%;
+    z-index: -1;
+}
+.banner::before {
+    top: -5%;
+    right: 95%;
+    box-shadow: inset -25px 0 25px rgba(0, 0, 0, 0.5);
+    -webkit-transform: skew(10deg);
+        -ms-transform: skew(10deg);
+            transform: skew(10deg);
+    /*animation: wave 3s infinite both alternate linear;*/
+}
+.banner::after {
+    top: -5%;
+    left: 95%;
+    box-shadow: inset 25px 0 25px rgba(0, 0, 0, 0.5);
+    -webkit-transform: skew(-10deg);
+        -ms-transform: skew(-10deg);
+            transform: skew(-10deg);
+    /*animation: waveReverse 3s infinite both alternate linear;*/
+}
+/**
+ * presented by...
+ */
+.tiy {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    margin-bottom: 1em;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 100;
+}
+.tiy::before {
+    content:"";
+    display: block;
+    background-image: url(../img/iron-yard-logo.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 1.5em;
+}
+.tiy::after {
+    content:"presents";
+    display: block;
+    color: white;
+    font-family:Ampersand,'Vollkorn', serif;
+    font-size: medium;
+}
+/**
+ * banner subline and tagline
+ */
+.banner-subinfo {
+    position: absolute;
+    display: block;
+    width: 85%;
+    top: 100%;
+    left: 7.5%;
+    box-shadow: inset 0 .125em 2em rgba(0, 0, 0, 0.65);
+    background-color: currentColor;
+}
+.banner-subinfo::after {
+    content:"Saturday • Nov 8th 2014 • Houston, TX";
+    color: white;
+    font-family:Ampersand,'Vollkorn', serif;
+    font-size: medium;
+    display: block;
+    text-shadow: 0 1px 1px black;
+    padding: .69em .69em;
+}
+.tagline {
+    display: block;
+    text-align: center;
+    font-size: medium;
+    font-weight: 100;
+}
+.tagline::after {
+    font-family:Ampersand,'Vollkorn', serif;
+    content:"Official Sponsor of Bavarian Code.";
+    color: white;
+    display: block;
+    padding: .6em 0 0;
+}
+/**
+ * logo
+ */
+.logo {
+    background-color: currentColor;
+    padding: .33em .69em;
+    margin:0;
+    display: inline-block;
+    text-shadow: 0 1px 1px black;
+}
+.logo::before {
+    color: white;
+    font-family:Ampersand,'UnifrakturMaguntia', cursive;
+    content:"Hacktoberfest";
+    display: block;
+}
+/**
+ * rsvp button
+ */
+.rsvp {
+    display: block;
+    font-size: medium;
+    position: absolute;
+    top:150%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 8em;
+    color: inherit;
+    border-radius: 50%;
+    text-decoration: none;
+    text-shadow: 0 1px 0px black;
+    background-color: currentColor;
+    z-index: -1;
+}
+.rsvp::before {
+    content:"";
+    display: block;
+    padding-top: 100%;
+}
+.rsvp::after {
+    border-radius: 50%;
+    content:"";
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+    width: 95%;
+    height: 95%;
+    border: 5px dashed rgba(0, 0, 0, 0.25);
+    -webkit-animation: rotate 20s both infinite linear;
+            animation: rotate 20s both infinite linear;
+}
+.rsvp svg, .rsvp span {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    z-index: 1;
+}
+.rsvp svg {
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 50%;
+    top:40%;
+    fill: white;
+}
+.rsvp span {
+    color: white;
+    font-family:Ampersand,'Vollkorn', serif;
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 2;
+    letter-spacing: -.125em;
+}
+.rsvp span:nth-of-type(1) {
+    -webkit-transform: translate(-50%, -50%) rotate(40deg) translateY(1.75em);
+        -ms-transform: translate(-50%, -50%) rotate(40deg) translateY(1.75em);
+            transform: translate(-50%, -50%) rotate(40deg) translateY(1.75em);
+}
+.rsvp span:nth-of-type(2) {
+    -webkit-transform: translate(-50%, -50%) rotate(12.5deg) translateY(1.75em);
+        -ms-transform: translate(-50%, -50%) rotate(12.5deg) translateY(1.75em);
+            transform: translate(-50%, -50%) rotate(12.5deg) translateY(1.75em);
+}
+.rsvp span:nth-of-type(3) {
+    -webkit-transform: translate(-50%, -50%) rotate(-12.5deg) translateY(1.75em);
+        -ms-transform: translate(-50%, -50%) rotate(-12.5deg) translateY(1.75em);
+            transform: translate(-50%, -50%) rotate(-12.5deg) translateY(1.75em);
+}
+.rsvp span:nth-of-type(4) {
+    -webkit-transform: translate(-50%, -50%) rotate(-40deg) translateY(1.75em);
+        -ms-transform: translate(-50%, -50%) rotate(-40deg) translateY(1.75em);
+            transform: translate(-50%, -50%) rotate(-40deg) translateY(1.75em);
+}
+.rsvp svg:nth-of-type(1) {
+    -webkit-transform: translate(-75%, -50%) rotateY(180deg) rotate(15deg);
+            transform: translate(-75%, -50%) rotateY(180deg) rotate(15deg);
+    -webkit-animation: tilt-flip 1.5s both alternate infinite ease -.75s;
+            animation: tilt-flip 1.5s both alternate infinite ease -.75s;
+}
+.rsvp svg:nth-of-type(2) {
+    -webkit-transform: translate(-25%, -50%) rotate(15deg);
+        -ms-transform: translate(-25%, -50%) rotate(15deg);
+            transform: translate(-25%, -50%) rotate(15deg);
+    -webkit-animation: tilt 1.5s both alternate infinite ease;
+            animation: tilt 1.5s both alternate infinite ease;
+}
+/**
+ * rotating starburst
+ */
+.starburst {
+    display: inline-block;
+    width:48em;
+    -webkit-transform: translate(-50%, -35%);
+        -ms-transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%);
+    pointer-events:none;
+    z-index: -2;
+    font-size: medium;
+    position: absolute;
+    top:120%;
+    left: 50%;
+    z-index: -2;
+    border-radius: 50%;
+}
+.starburst::before {
+    content:"";
+    display: block;
+    padding-top: 100%;
+    background-image: url(../img/star.png);
+    background-position: center center;
+    background-size: 100% auto;
+    -webkit-animation: rotate 60s both infinite linear;
+            animation: rotate 60s both infinite linear;
+}
+/**
+ * keyframe animations
+ */
+@-webkit-keyframes wave {
+    0% {
+        -webkit-transform: skew(10deg) translate(0, 0);
+                transform: skew(10deg) translate(0, 0);
+    }
+    100% {
+        -webkit-transform: skew(5deg) translate(10%, 0);
+                transform: skew(5deg) translate(10%, 0);
+    }
+}
+@keyframes wave {
+    0% {
+        -webkit-transform: skew(10deg) translate(0, 0);
+                transform: skew(10deg) translate(0, 0);
+    }
+    100% {
+        -webkit-transform: skew(5deg) translate(10%, 0);
+                transform: skew(5deg) translate(10%, 0);
+    }
+}
+@-webkit-keyframes waveReverse {
+    0% {
+        -webkit-transform: skew(-5deg) translate(-10%, 0);
+                transform: skew(-5deg) translate(-10%, 0);
+    }
+    100% {
+        -webkit-transform: skew(-10deg) translate(0, 0);
+                transform: skew(-10deg) translate(0, 0);
+    }
+}
+@keyframes waveReverse {
+    0% {
+        -webkit-transform: skew(-5deg) translate(-10%, 0);
+                transform: skew(-5deg) translate(-10%, 0);
+    }
+    100% {
+        -webkit-transform: skew(-10deg) translate(0, 0);
+                transform: skew(-10deg) translate(0, 0);
+    }
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+                transform: rotate(359deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+                transform: rotate(359deg);
+    }
+}
+@-webkit-keyframes tilt-flip {
+    0% {
+        -webkit-transform: translate(-75%, -50%) rotateY(180deg) rotate(15deg);
+                transform: translate(-75%, -50%) rotateY(180deg) rotate(15deg);
+    }
+    100% {
+        -webkit-transform: translate(-75%, -50%) rotateY(180deg) rotate(-5deg);
+                transform: translate(-75%, -50%) rotateY(180deg) rotate(-5deg);
+    }
+}
+@keyframes tilt-flip {
+    0% {
+        -webkit-transform: translate(-75%, -50%) rotateY(180deg) rotate(15deg);
+                transform: translate(-75%, -50%) rotateY(180deg) rotate(15deg);
+    }
+    100% {
+        -webkit-transform: translate(-75%, -50%) rotateY(180deg) rotate(-5deg);
+                transform: translate(-75%, -50%) rotateY(180deg) rotate(-5deg);
+    }
+}
+@-webkit-keyframes tilt {
+    0% {
+        -webkit-transform: translate(-25%, -50%) rotate(15deg);
+                transform: translate(-25%, -50%) rotate(15deg);
+    }
+    100% {
+        -webkit-transform: translate(-25%, -50%) rotate(-5deg);
+                transform: translate(-25%, -50%) rotate(-5deg);
+    }
+}
+@keyframes tilt {
+    0% {
+        -webkit-transform: translate(-25%, -50%) rotate(15deg);
+                transform: translate(-25%, -50%) rotate(15deg);
+    }
+    100% {
+        -webkit-transform: translate(-25%, -50%) rotate(-5deg);
+                transform: translate(-25%, -50%) rotate(-5deg);
+    }
+}
+/**
+ * content section
+ */
+ .content {
+    max-width: 33em;
+    margin: 0 auto;
+    font-family: Ampersand, "Vollkorn", serif;
+}
+.content h2 {
+    counter-reset: sections;
+    margin-top: 1.25em;
+}
+.content h2::after {
+    content:"";
+    display: inline-block;
+    width: 100%;
+    border-top: 2px dashed currentColor;
+    height:.25em;
+}
+.content h4 {
+    counter-increment: sections;
+}
+.content h4:before {
+    content: counter(sections) " - ";
+    opacity: .8;
+}
+.pull-quote {
+    position: relative;
+    padding: 2em 1.5em;
+}
