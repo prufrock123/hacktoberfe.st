@@ -71,7 +71,7 @@ p + p {
 /**
  * banner
  */
-.banner {
+ .banner {
     display: inline-block;
     color: red;
     position: relative;
@@ -104,7 +104,7 @@ p + p {
 /**
  * presented by...
  */
-.tiy {
+ .tiy {
     display: block;
     position: absolute;
     bottom: 100%;
@@ -118,22 +118,23 @@ p + p {
 .tiy::before {
     content:"";
     display: block;
-    background-image: url(../img/iron-yard-logo.svg);
-    background-size: 100% 100%;
+    background-image: url('../img/iron-yard-logo.svg');
+    background-size: auto 100%;
     background-repeat: no-repeat;
     min-height: 1.5em;
+    background-position: center;
 }
 .tiy::after {
     content:"presents";
     display: block;
     color: white;
-    font-family:Ampersand,'Vollkorn', serif;
+    font-family:Ampersand, 'Vollkorn', serif;
     font-size: medium;
 }
 /**
  * banner subline and tagline
  */
-.banner-subinfo {
+ .banner-subinfo {
     position: absolute;
     display: block;
     width: 85%;
@@ -145,7 +146,7 @@ p + p {
 .banner-subinfo::after {
     content:"Saturday • Nov 8th 2014 • Houston, TX";
     color: white;
-    font-family:Ampersand,'Vollkorn', serif;
+    font-family:Ampersand, 'Vollkorn', serif;
     font-size: medium;
     display: block;
     text-shadow: 0 1px 1px black;
@@ -158,7 +159,7 @@ p + p {
     font-weight: 100;
 }
 .tagline::after {
-    font-family:Ampersand,'Vollkorn', serif;
+    font-family:Ampersand, 'Vollkorn', serif;
     content:"Official Sponsor of Bavarian Code.";
     color: white;
     display: block;
@@ -167,7 +168,7 @@ p + p {
 /**
  * logo
  */
-.logo {
+ .logo {
     background-color: currentColor;
     padding: .33em .69em;
     margin:0;
@@ -176,14 +177,14 @@ p + p {
 }
 .logo::before {
     color: white;
-    font-family:Ampersand,'UnifrakturMaguntia', cursive;
+    font-family:Ampersand, 'UnifrakturMaguntia', cursive;
     content:"Hacktoberfest";
     display: block;
 }
 /**
  * rsvp button
  */
-.rsvp {
+ .rsvp {
     display: block;
     font-size: medium;
     position: absolute;
@@ -229,7 +230,7 @@ p + p {
 }
 .rsvp span {
     color: white;
-    font-family:Ampersand,'Vollkorn', serif;
+    font-family:Ampersand, 'Vollkorn', serif;
     display: inline-block;
     font-size: 1.5em;
     line-height: 2;
@@ -258,7 +259,7 @@ p + p {
 /**
  * rotating starburst
  */
-.starburst {
+ .starburst {
     display: inline-block;
     width:48em;
     transform: translate(-50%, -35%);
@@ -283,7 +284,7 @@ p + p {
 /**
  * keyframe animations
  */
-@keyframes wave {
+ @keyframes wave {
     0% {
         transform: skew(10deg) translate(0, 0);
     }
@@ -346,7 +347,7 @@ p + p {
     counter-increment: sections;
 }
 .content h4:before {
-    content: counter(sections) " - ";
+    content: counter(sections)" - ";
     opacity: .8;
 }
 .pull-quote {
