@@ -328,7 +328,8 @@ p + p {
  * content section
  */
  .content {
-    max-width: 33em;
+    max-width: 35em;
+    padding: 0 1em;
     margin: 0 auto;
     font-family: Ampersand, "Vollkorn", serif;
 }
@@ -353,4 +354,24 @@ p + p {
 .pull-quote {
     position: relative;
     padding: 2em 1.5em;
+}
+.content form {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-right: 8em;
+    margin-bottom: 1em;
+}
+.content input[type="submit"] {
+    position: absolute;
+    width: 7em;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: .6em 1em;
+}
+.content input[type="email"] {
+    display: inline-block;
+    width: 100%;
+    padding: .5em 1em;
 }
