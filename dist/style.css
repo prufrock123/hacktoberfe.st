@@ -460,3 +460,80 @@ p + p {
     width: 100%;
     padding: .5em 1em;
 }
+/**
+ * social
+ */
+ .share {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    font-family:"Vollkorn", serif;
+}
+.share > div {
+    float: left;
+}
+.getshare input[type="checkbox"] {
+    display: none;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+}
+.getshare-counter:before {
+    content:'';
+    height: 20px;
+    display: inline-block;
+    background-position: 0% 30%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.share .twitter, .share .facebook, .share .googleplus {
+    -webkit-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+            transform: translateX(30px);
+    -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+    opacity: 0;
+    margin-right: 20px;
+}
+.share.active .twitter, .share.active .facebook, .share.active .googleplus {
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+}
+.twitter .getshare-counter:before {
+    background-image: url(../img/twitter.svg);
+    background-size: 16px;
+    width: 22px;
+}
+.facebook .getshare-counter:before {
+    background-image: url(../img/facebook.svg);
+    background-size: 7px;
+    width: 14px;
+}
+.googleplus .getshare-counter:before {
+    background-image: url(../img/googleplus.svg);
+    background-size: 16px;
+    width: 22px;
+}
+.getshare-counter {
+    color: #808080;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    -webkit-transition: color 0.3s ease;
+            transition: color 0.3s ease;
+}
+.getshare-counter:hover {
+    color: #b5b5b5;
+}
+.social {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: #222 no-repeat center center;
+    background-size: 16px;
+    position: relative;
+    z-index: 9999;
+}
