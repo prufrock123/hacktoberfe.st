@@ -150,7 +150,7 @@ p + p {
     background-color: currentColor;
 }
 .banner-subinfo::after {
-    content:"Saturday • Nov 8th 2014 • Houston, TX";
+    content: "Date and Venue TBD • Houston, TX"; /*"Saturday • Nov 8th 2014 • Houston, TX";*/
     color: white;
     font-family:Ampersand, 'Vollkorn', serif;
     font-size: medium;
